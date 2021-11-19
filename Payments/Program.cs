@@ -14,6 +14,13 @@ namespace Payments
 
             Console.WriteLine(customer.Name);
 
+            var payment1 = new TicketPayment();
+            var payment2 = new CardPayment();
+
+            payment1.DueDate = DateTime.Now;
+
+            Console.WriteLine(payment1);
+
         }
 
         public class Customer
@@ -27,7 +34,27 @@ namespace Payments
             public DateTime DueDate { get; set; }
 
             //Methods
-            void Pagar(){}
+            public virtual void Pagar() { }
+        }
+
+        public class TicketPayment : Payment
+        {
+            public override void Pagar()
+            {
+                // Regra do boleto com polimorfismo (Override)
+            }
+
+            public override string ToString()
+            {
+                return $"Class Ticket payment - Date: {DueDate}";
+            }
+        }
+
+        public class CardPayment : Payment
+        {
+            public string Number { get; set; }
+
+
         }
     }
 }
