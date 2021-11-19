@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Channels;
 
 namespace Payments
 {
@@ -22,22 +23,29 @@ namespace Payments
             Console.WriteLine(payment1);
 
         }
+        // sealed deixa a classe proibida de ser instanciada
+        //public sealed class Payment
+        public class Payment
+        {
+            //Properties
+            public DateTime DueDate { get; set; }
+
+            public Payment()
+            {
+                Console.WriteLine("Construtor da classe base Payment");
+            }
+
+
+            //Methods
+            public virtual void Pagar() { }
+        }
 
         public class Customer
         {
             public string Name { get; set; }
         }
 
-        public class Payment
-        {
-            //Properties
-            public DateTime DueDate { get; set; }
-
-            //Methods
-            public virtual void Pagar() { }
-        }
-
-        public class TicketPayment : Payment
+        public class TicketPayment : Payment, IPayment
         {
             public override void Pagar()
             {
@@ -48,12 +56,25 @@ namespace Payments
             {
                 return $"Class Ticket payment - Date: {DueDate}";
             }
+
+            //Implemented by interface
+            public void PaymentMethod()
+            {
+                Console.WriteLine("Payment method implemented by interface");
+            }
         }
 
         public class CardPayment : Payment
         {
             public string Number { get; set; }
 
+
+        }
+
+        // Example Interface
+        public interface IPayment
+        {
+            void PaymentMethod();
 
         }
     }
