@@ -20,12 +20,17 @@ namespace Payments
 
             payment1.DueDate = DateTime.Now;
 
+            //var payment = new Payment();
+
             Console.WriteLine(payment1);
 
         }
         // sealed deixa a classe proibida de ser instanciada
         //public sealed class Payment
-        public class Payment
+
+        // Classe abstrata para evitar instâncias
+        public abstract class Payment
+        //public class Payment
         {
             //Properties
             public DateTime DueDate { get; set; }
