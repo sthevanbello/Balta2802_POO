@@ -8,11 +8,21 @@ namespace Payments
         static void Main(string[] args)
         {
 
-            var pagar = new Pagamento.Pagar(ExemploDelegate.RealizarPagamento);
-            pagar(valor:1500);
+            var room = new Room(3);
+            room.RoomSoldOutEvent += OnRoomSouldOut;
+            room.ReserveSeat();
+            room.ReserveSeat();
+            room.ReserveSeat();
+            room.ReserveSeat();
+
 
             Console.ReadKey();
         }
-       
+
+        static void OnRoomSouldOut(object sender, EventArgs e)
+        {
+            Console.WriteLine("Room is full");
+
+        }
     }
 }
