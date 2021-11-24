@@ -9,20 +9,18 @@ namespace Payments
         {
 
             var room = new Room(3);
-            room.RoomSoldOutEvent += OnRoomSouldOut;
+            room.RoomSoldOutEvent += Room.OnRoomSouldOut;
+
             room.ReserveSeat();
             room.ReserveSeat();
             room.ReserveSeat();
             room.ReserveSeat();
+
 
 
             Console.ReadKey();
         }
 
-        static void OnRoomSouldOut(object sender, EventArgs e)
-        {
-            Console.WriteLine("Room is full");
-
-        }
+        
     }
 }

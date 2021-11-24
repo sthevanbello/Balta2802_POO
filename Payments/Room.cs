@@ -39,5 +39,11 @@ namespace Payments
             EventHandler handler = RoomSoldOutEvent;
             handler?.Invoke(this, e);
         }
+
+        public static void OnRoomSouldOut(object sender, EventArgs e)
+        {
+            Console.WriteLine("Room is full");
+
+        }
     }
 }
