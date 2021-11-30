@@ -11,25 +11,37 @@ namespace Payments
 
     }
 
-    public class DataContext<T>
+    public class DataContext<P, PA, S>
+        where P : PersonGeneric
+        where PA : PaymentGeneric
+        where S : SubscriptionGeneric
     {
-        public void Save(T entity)
+        public void Save(P entity)
         {
 
         }
+        public void Save(PA entity)
+        {
+
+        }
+        public void Save(S entity)
+        {
+
+        }
+
     }
     public class PersonGeneric
     {
-        
+
     }
 
     public class PaymentGeneric
     {
-        
+
     }
 
     public class SubscriptionGeneric
     {
-        
+
     }
 }
