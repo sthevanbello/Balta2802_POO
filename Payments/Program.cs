@@ -8,17 +8,14 @@ namespace Payments
         static void Main(string[] args)
         {
 
-            var room = new Room(3);
-            room.RoomSoldOutEvent += Room.OnRoomSouldOut;
+            var contextPerson = new DataContext<PersonGeneric>();
+            var contextPayment = new DataContext<PaymentGeneric>();
 
-            room.ReserveSeat();
-            room.ReserveSeat();
-            room.ReserveSeat();
-            room.ReserveSeat();
+            var person = new PersonGeneric();
+            var payment = new PaymentGeneric();
 
-
-
-            Console.ReadKey();
+            contextPerson.Save(person);
+            contextPayment.Save(payment);
         }
 
         
