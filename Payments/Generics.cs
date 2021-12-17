@@ -32,12 +32,22 @@ namespace Payments
     }
     public class PersonGeneric
     {
+        public int Id { get; set; }
 
+        public PersonGeneric(int id)
+        {
+            Id = id;
+        }
     }
 
     public class PaymentGeneric
     {
+        public int Id { get; set; }
 
+        public PaymentGeneric(int id)
+        {
+            Id = id;
+        }
     }
 
     public class SubscriptionGeneric

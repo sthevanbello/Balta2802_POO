@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Channels;
 
 namespace Payments
@@ -7,25 +8,22 @@ namespace Payments
     {
         static void Main(string[] args)
         {
+            var payments = new List<PaymentGeneric>();
 
-            //var contextPerson = new DataContext<PersonGeneric>();
-            //var contextPayment = new DataContext<PaymentGeneric>();
+            payments.Add(new PaymentGeneric(1));
+            payments.Add(new PaymentGeneric(2));
+            payments.Add(new PaymentGeneric(3));
+            payments.Add(new PaymentGeneric(4));
+            payments.Add(new PaymentGeneric(5));
+            payments.Add(new PaymentGeneric(6));
 
-            //var person = new PersonGeneric();
-            //var payment = new PaymentGeneric();
 
-            //contextPerson.Save(person);
-            //contextPayment.Save(payment);
-
-            var context = new DataContext<PersonGeneric, PaymentGeneric, SubscriptionGeneric>();
-
-            var person = new PersonGeneric();
-            var payment = new PaymentGeneric();
-            var subscription = new SubscriptionGeneric();
-
-            context.Save(person);
-            context.Save(payment);
-            context.Save(subscription);
+            foreach (var payment in payments)
+            {
+                Console.WriteLine(payment.Id);
+            }
+            
+            Console.ReadKey();
         }
 
         
