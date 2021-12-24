@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Channels;
 
 namespace Payments
@@ -22,10 +23,20 @@ namespace Payments
             {
                 Console.WriteLine(payment.Id);
             }
-            
+
+            var paymentsWhere = payments.Where(x => x.Id == 3);
+            var paymentsFirst = payments.FirstOrDefault(x => x.Id == 3);
+
+            foreach (var item in paymentsWhere)
+            {
+                Console.WriteLine(item.Id);
+            }
+            Console.WriteLine(paymentsFirst);
+
+
             Console.ReadKey();
         }
 
-        
+
     }
 }
