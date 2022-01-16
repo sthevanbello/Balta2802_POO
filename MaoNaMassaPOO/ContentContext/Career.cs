@@ -10,9 +10,9 @@ namespace MaoNaMassaPOO.ContentContext
     {
         public Career(string title, string url) : base(title, url)
         {
-            Items = new List<CarrerItem>();
+            Items = new List<CareerItem>();
         }
-        public IList<CarrerItem> Items { get; }
+        public IList<CareerItem> Items { get; }
 
         //public int TotalCourses {
         //    get

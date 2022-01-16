@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace MaoNaMassaPOO.ContentContext
 {
-    public class Articles : Content
+    public abstract class Base : Notifiable
     {
-        public Articles(string title, string url) : base(title, url)
+        public Base()
         {
-            
+            Id = Guid.NewGuid(); // SPOF - Single point of failure
         }
 
-        
+        public Guid Id { get; set; }
     }
 }
