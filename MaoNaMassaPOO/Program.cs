@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MaoNaMassaPOO.ContentContext;
 using MaoNaMassaPOO.ContentContext.Enums;
+using MaoNaMassaPOO.SharedContext;
 
 namespace MaoNaMassaPOO
 {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaoNaMassaPOO.ContentContext
+namespace MaoNaMassaPOO.SharedContext
 {
     public abstract class Base : Notifiable
     {
